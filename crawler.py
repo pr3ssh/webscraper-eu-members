@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from slugify import slugify
 import requests
-import json
+import simplejson as json
 
 '''
 La documentacion puede ser encontrada en
@@ -31,4 +31,4 @@ for tr in countries_html_table.find_all("tr"):
         countries_collection.append(country)
 
 
-print(json.dumps(countries_collection, indent=4))
+print(json.dumps(countries_collection, indent=4, ensure_ascii=False, encoding="utf-8"))
