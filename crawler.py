@@ -14,8 +14,8 @@ Rescatar la informacion basica sobre los estados miembro
 de la Union Europea
 '''
 
-req  = requests.get("https://en.wikipedia.org/wiki/Member_state_of_the_European_Union")
-data = req.text
+response  = requests.get("https://en.wikipedia.org/wiki/Member_state_of_the_European_Union")
+data = response.text
 soup = BeautifulSoup(data, "html.parser")
 countries_collection = []
 countries_html_table = soup.find_all("table", class_="wikitable")[0]
